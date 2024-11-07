@@ -17,6 +17,9 @@
         <label for="description">Descripción:</label>
         <textarea id="edit_description" name="description" required></textarea>
         
+        <label for="end">Fecha de finalización:</label>
+        <input type="datetime-local" id="edit_end" name="end" required>
+        
         <button type="submit">Guardar Cambios</button>
     </form>
 </section>

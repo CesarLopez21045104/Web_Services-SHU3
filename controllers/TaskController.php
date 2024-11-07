@@ -17,11 +17,22 @@ class TaskController {
     }
 
     public function addTask($data) {
-        return $this->taskModel->createTask($data['title'], $data['description']);
+        // Aseguramos que 'end' esté incluido en el array de datos
+        return $this->taskModel->createTask(
+            $data['title'], 
+            $data['description'], 
+            $data['end'] // Nuevo campo agregado
+        );
     }
 
     public function updateTask($data) {
-        return $this->taskModel->updateTask($data['id'], $data['title'], $data['description']);
+        // Aseguramos que 'end' esté incluido en el array de datos
+        return $this->taskModel->updateTask(
+            $data['id'], 
+            $data['title'], 
+            $data['description'], 
+            $data['end'] // Nuevo campo agregado
+        );
     }
 
     public function deleteTask($id) {

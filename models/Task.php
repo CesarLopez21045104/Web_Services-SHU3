@@ -17,14 +17,16 @@ class Task {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function createTask($title, $description) {
-        $stmt = $this->pdo->prepare("INSERT INTO tasks (title, description) VALUES (?, ?)");
-        return $stmt->execute([$title, $description]);
+    public function createTask($title, $description, $end) {
+        // Ahora se incluye el campo 'end'
+        $stmt = $this->pdo->prepare("INSERT INTO tasks (title, description, end) VALUES (?, ?, ?)");
+        return $stmt->execute([$title, $description, $end]);
     }
 
-    public function updateTask($id, $title, $description) {
-        $stmt = $this->pdo->prepare("UPDATE tasks SET title = ?, description = ? WHERE id = ?");
-        return $stmt->execute([$title, $description, $id]);
+    public function updateTask($id, $title, $description, $end) {
+        // Ahora se incluye el campo 'end'
+        $stmt = $this->pdo->prepare("UPDATE tasks SET title = ?, description = ?, end = ? WHERE id = ?");
+        return $stmt->execute([$title, $description, $end, $id]);
     }
 
     public function deleteTask($id) {

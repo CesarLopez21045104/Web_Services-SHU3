@@ -7,6 +7,9 @@
         <label for="description">Descripción:</label>
         <textarea id="description" name="description" required></textarea>
         
+        <label for="end">Fecha de finalización:</label>
+        <input type="datetime-local" id="end" name="end" required>
+        
         <button type="submit">Agregar Tarea</button>
     </form>
 </section>
