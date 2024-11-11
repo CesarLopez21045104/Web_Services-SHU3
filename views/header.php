@@ -99,11 +99,13 @@
         .jumbotron h2 {
             font-size: 2rem;
             font-weight: 600;
+            color: #333; /* Color oscuro para el texto */
         }
 
         .jumbotron p {
             font-size: 1.2rem;
             line-height: 1.6;
+            color: #333; /* Color oscuro para el texto */
         }
     </style>
 </head>
@@ -125,15 +127,14 @@
                 </div>
             </nav>
         </div>
-    </header>
-
-    <main class="container">
+        <main class="container">
         <!-- Aquí va el contenido principal -->
         <div class="jumbotron text-center">
             <h2>Bienvenido al Gestor de Tareas</h2>
             <p class="lead">Utiliza las opciones de arriba para gestionar tus tareas.</p>
         </div>
     </main>
+    </header>
 
     <!-- Cargando el script de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

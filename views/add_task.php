@@ -27,13 +27,12 @@
 <style>
     body {
         font-family: 'Arial', sans-serif;
-        background-color: #f8f9fc;
+        background-color: #f4f7fc;
     }
 
     #addTask {
-        background: linear-gradient(to right, #00c6ff, #0072ff);
+        background-color: #0072ff; /* Este es el mismo color que el fondo del navbar */
         color: white;
-        border-radius: 10px;
         padding: 40px 0;
     }
 
