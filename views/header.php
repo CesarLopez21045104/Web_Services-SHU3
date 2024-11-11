@@ -107,6 +107,28 @@
             line-height: 1.6;
             color: #333; /* Color oscuro para el texto */
         }
+
+        /* Estilo para el botón de Cerrar Sesión (mismo estilo que los otros enlaces de la barra de navegación) */
+        .logout-btn {
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #17a2b8;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .logout-btn:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -116,7 +138,7 @@
             <h1>Gestor de Tareas</h1>
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
-                    <ul class="nav">
+                    <ul class="nav me-auto"> <!-- Esto alinea los primeros items a la izquierda -->
                         <li class="nav-item">
                             <a href="index.php?page=task_list" class="nav-link">Ver Tareas</a>
                         </li>
@@ -124,6 +146,14 @@
                             <a href="index.php?page=add_task" class="nav-link">Agregar Tarea</a>
                         </li>
                     </ul>
+
+                    <!-- El botón "Cerrar Sesión" se alinea al final de la barra de navegación y se ve igual que los otros botones -->
+                    <ul class="nav ms-auto"> <!-- Esto alinea los items a la derecha -->
+    <li class="nav-item">
+        <a href="login.php" class="nav-link logout-btn">Cerrar Sesión</a>
+    </li>
+</ul>
+
                 </div>
             </nav>
         </div>
@@ -133,7 +163,7 @@
             <h2>Bienvenido al Gestor de Tareas</h2>
             <p class="lead">Utiliza las opciones de arriba para gestionar tus tareas.</p>
         </div>
-    </main>
+        </main>
     </header>
 
     <!-- Cargando el script de Bootstrap -->
