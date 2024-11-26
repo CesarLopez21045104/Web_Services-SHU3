@@ -3,7 +3,7 @@ class Task {
     private $pdo;
 
     public function __construct() {
-        $this->pdo = new PDO("mysql:host=localhost;dbname=gestor_tareas", "root", "");
+        $this->pdo = new PDO("mysql:host=database;dbname=api_db", "api_user", "api_password");
     }
 
     public function getTasks() {

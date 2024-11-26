@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app-network
+
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gestor_tareas  # Nombre de tu base de datos
+      MYSQL_USER: api_user
+      MYSQL_PASSWORD: api_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: database  # Nombre del servicio de MySQL
+      PMA_USER: api_user   # Usuario para conectarse a la base de datos
+      PMA_PASSWORD: api_password  # Contraseña para el usuario
+    ports:
+      - "8080:80"  # Acceso a phpMyAdmin en el puerto 8080
+    depends_on:
+      - database
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
